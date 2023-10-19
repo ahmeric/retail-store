@@ -75,5 +75,11 @@ public class BillController {
     return ResponseEntity.ok(modelMapper.map(billDto, BillResponse.class));
   }
 
+  @GetMapping("/test/{id}")
+  public ResponseEntity<BillResponse> getBillByIdTest(@PathVariable String id) {
+    var billDto = billService.getBillById(id);
+    return ResponseEntity.ok(modelMapper.map(billDto, BillResponse.class));
+  }
+
 }
 
